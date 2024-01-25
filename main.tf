@@ -42,7 +42,7 @@ resource "aws_cloudwatch_event_target" "stop_instances_target" {        # Creati
   arn       = aws_lambda_function.stop_instances_lambda.arn
 }
 
-resource "aws_iam_role" "lambda_execution_role" {
+resource "aws_iam_role" "lambda_execution_role" {                 # Creating Role with Trust policy 
   name = "lambda_execution_role"
 
   assume_role_policy = <<EOF
