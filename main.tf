@@ -5,16 +5,16 @@ provider "aws" {
 resource "aws_cloudwatch_event_rule" "start_instances_rule" {
   name                = "start_instances_rule"
   description         = "Rule to trigger Lambda function for starting instances"
-  schedule_expression = "cron(0 8 * * ? *)"  # Update with your desired start time (GMT)
+  schedule_expression = "cron(0 8 * * ? *)"  # Update your desired start time (GMT)
 }
 
 resource "aws_cloudwatch_event_rule" "stop_instances_rule" {
   name                = "stop_instances_rule"
   description         = "Rule to trigger Lambda function for stopping instances"
-  schedule_expression = "cron(0 20 * * ? *)"  # Update with your desired stop time (GMT)
+  schedule_expression = "cron(0 20 * * ? *)"  # Update your desired stop time (GMT)
 }
 
-resource "aws_lambda_function" "start_instances_lambda" {
+resource "aws_lambda_function" "start_instances_lambda" {    #Lambda function Deployment
   filename      = "lambda/start_instances.py"
   function_name = "start_instances_lambda"
   role          = aws_iam_role.lambda_execution_role.arn
