@@ -14,7 +14,7 @@ resource "aws_cloudwatch_event_rule" "stop_instances_rule" {
   schedule_expression = "cron(0 20 * * ? *)"  # Update your desired stop time (GMT)
 }
 
-resource "aws_lambda_function" "start_instances_lambda" {    #Lambda function Deployment
+resource "aws_lambda_function" "start_instances_lambda" {    # Start Lambda function Deployment
   filename      = "lambda/start_instances.py"
   function_name = "start_instances_lambda"
   role          = aws_iam_role.lambda_execution_role.arn
