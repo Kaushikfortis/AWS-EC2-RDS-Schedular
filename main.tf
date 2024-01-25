@@ -62,7 +62,7 @@ resource "aws_iam_role" "lambda_execution_role" {                 # Creating Rol
 EOF
 }
 
-resource "aws_iam_policy" "lambda_policy" {
+resource "aws_iam_policy" "lambda_policy" {                  # Creating custom policy to assign required permission to Lambda function
   name        = "lambda_policy"
   description = "Permissions for Lambda functions to start and stop EC2 instances"
 
