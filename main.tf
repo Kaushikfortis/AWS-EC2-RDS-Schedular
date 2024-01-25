@@ -30,13 +30,13 @@ resource "aws_lambda_function" "stop_instances_lambda" {      # Stop Lambda func
   runtime       = "python3.8"
 }
 
-resource "aws_cloudwatch_event_target" "start_instances_target" {
+resource "aws_cloudwatch_event_target" "start_instances_target" {       # Creating Cloud Watch event to trigger Start Lambda Function
   rule      = aws_cloudwatch_event_rule.start_instances_rule.name
   target_id = aws_lambda_function.start_instances_lambda.function_name
   arn       = aws_lambda_function.start_instances_lambda.arn
 }
 
-resource "aws_cloudwatch_event_target" "stop_instances_target" {
+resource "aws_cloudwatch_event_target" "stop_instances_target" {        # Creating Cloud Watch evennt to tri
   rule      = aws_cloudwatch_event_rule.stop_instances_rule.name
   target_id = aws_lambda_function.stop_instances_lambda.function_name
   arn       = aws_lambda_function.stop_instances_lambda.arn
