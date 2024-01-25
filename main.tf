@@ -22,7 +22,7 @@ resource "aws_lambda_function" "start_instances_lambda" {    # Start Lambda func
   runtime       = "python3.8"
 }
 
-resource "aws_lambda_function" "stop_instances_lambda" {
+resource "aws_lambda_function" "stop_instances_lambda" {      # Stop Lambda function Deployment
   filename      = "lambda/stop_instances.py"
   function_name = "stop_instances_lambda"
   role          = aws_iam_role.lambda_execution_role.arn
