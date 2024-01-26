@@ -85,7 +85,7 @@ resource "aws_iam_policy" "lambda_policy" {                  # Creating custom p
 EOF
 }
 
-resource "aws_iam_role_policy_attachment" "lambda_policy_attachment" {
+resource "aws_iam_role_policy_attachment" "lambda_policy_attachment" {     # Attaching policy to Lambda function
   role       = aws_iam_role.lambda_execution_role.name
   policy_arn = aws_iam_policy.lambda_policy.arn
 }
