@@ -26,7 +26,7 @@ To deploy and configure the EC2 Instance Scheduler, follow these steps:
 8. After the deployment is complete, you can verify that the Lambda functions and related resources have been provisioned in your AWS account.
 
 ## Configuration
-
+  
 To configure the EC2 instances for scheduling, follow these steps:
 
 1. Assign the necessary tags to your EC2 instances:
