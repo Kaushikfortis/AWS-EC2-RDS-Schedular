@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-west-2"  # Update with your desired AWS region
+  region = "ap-south-1"  # Update with your desired AWS region
 }
 
 resource "aws_cloudwatch_event_rule" "start_instances_rule" {
